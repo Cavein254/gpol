@@ -11,6 +11,7 @@ from authapp.database import SessionLocal, engine
 from authapp.utils import get_hashed_password
 from authapp.utils import ACCESS_TOKEN_EXPIRE_MINUTES,ALGORITHM,create_access_token,create_refresh_token, verify_password, get_hashed_password, JWT_REFRESH_SECRET_KEY, JWT_SECRET_KEY
 
+from fastapi.middleware.cors import CORSMiddleware
 Base.metadata.create_all(engine)
 def get_session():
     session = SessionLocal()
@@ -19,7 +20,13 @@ def get_session():
     finally:
         session.close()
 
-app = FastAPI()
+app = FastAPI(debug=True)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origin=['http://localhost:5173/'],
+    allow_methods=['*'],
+    allow_headers=['*']
+)
 
 @app.get('/')
 def index():
