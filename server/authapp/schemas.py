@@ -11,7 +11,7 @@ class UserCreate(BaseModel):
     username:str
     email:str
     password:str
-    admin:bool
+    admin:bool|None
 
     class Config:
         orm_mode = True

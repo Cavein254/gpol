@@ -113,7 +113,7 @@ async def change_password(request:schemas.changepassword, session:Session = Depe
 
     return {"message": "Password changed successfully", "payload":user}
 
-@app.get('/getusers')
+@app.get('/users')
 async def getusers(dependancies=Depends(JWTBearer()), session: Session = Depends(get_session)):
     users = await session.query(models.User).all()
     return users
@@ -138,9 +138,10 @@ async def login(request:schemas.requestdetails, session:Session = Depends(get_se
         "refresh_token": refresh,
     }
 
-@app.post('/register')
+@app.post('/register',response_model=schemas.User)
+#Todo: Handle unique user errors
 async def register_user(user:schemas.UserCreate, session:Session = Depends(get_session)):
-    existing_user = await session.query(models.User).filter_by(email=user.email).first()
+    existing_user = session.query(models.User).filter_by(email=user.email).first()
     if existing_user:
         raise HTTPException(status_code=400, detail="Email already exists")
     password_hash = get_hashed_password(user.password)
@@ -149,4 +150,4 @@ async def register_user(user:schemas.UserCreate, session:Session = Depends(get_s
     session.commit()
     session.refresh(new_user)
 
-    return {'msg':'user created successfully', 'payload': new_user}
+    return new_user
