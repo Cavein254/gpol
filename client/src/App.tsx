@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import './App.css'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import './App.css';
+
+let headersList = {
+  Accept: '*/*',
+  'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
+  Authorization:
+    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTA3MTQ4MDEsInN1YiI6IjUiLCJhY2Nlc3MiOmZhbHNlfQ.yEKBz-Z27aC8CLbzRrPU9hIbwmuNfabE0SHz52GQoao',
+  'Access-Control-Allow-Origin': 'no-cors',
+};
+
+let reqOptions = {
+  url: 'http://127.0.0.1:8000/posts',
+  method: 'GET',
+  headers: headersList,
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .request(reqOptions)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count} the same
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Waiting for data</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

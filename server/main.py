@@ -23,9 +23,9 @@ def get_session():
 app = FastAPI(debug=True)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:5173/', 'http://localhost:8000/'],
+    allow_origins=['http://localhost:5173/'],
     allow_methods=['*'],
-    allow_headers=['*']
+    allow_headers=[{'Access-Control-Allow-Origin': 'no-cors'}],
 )
 
 @app.get('/')
