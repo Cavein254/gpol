@@ -47,7 +47,10 @@ class Post(BaseModel):
 
     class Config:
         orm_mode = True
-
+class CreatePost(BaseModel):
+    title: str
+    post: str
+    
 class GetUser(BaseModel):
     username: str
     email:str

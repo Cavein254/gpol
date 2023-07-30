@@ -54,11 +54,11 @@ async def admin_page(dependancies= Depends(JWTBearer()), session: Session= Depen
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Only admin users can access this page")
 
 @app.post('/create-post')
-async def create_post(request:schemas.Post,dependancies= Depends(JWTBearer()), session: Session= Depends(get_session)):
+async def create_post(request:schemas.CreatePost,dependancies= Depends(JWTBearer()), session: Session= Depends(get_session)):
    token = dependancies
    payload = jwt.decode(token, JWT_SECRET_KEY, ALGORITHM)
    user_id = payload['sub']
-   existing_user = await session.query(models.User).filter(models.User.user_id == user_id).first()
+   existing_user = session.query(models.User).filter(models.User.user_id == user_id).first()
    if existing_user is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="User does not exist")
 
@@ -73,7 +73,7 @@ async def create_post(request:schemas.Post,dependancies= Depends(JWTBearer()), s
 
 @app.get('/posts')
 async def get_posts(skip:int = 0, limit: int = 100, session:Session = Depends(get_session)):
-    posts = await crud.get_all_posts(session, skip=skip, limit=limit)
+    posts = crud.get_all_posts(session, skip=skip, limit=limit)
     return posts
 
 @app.post('/logout')
@@ -101,7 +101,7 @@ async def logout(dependancies=Depends(JWTBearer()), session:Session = Depends(ge
         
 @app.post('/change-password')
 async def change_password(request:schemas.changepassword, session:Session = Depends(get_session),dependencies=Depends(JWTBearer())):
-    user = await session.query(models.User).filter(models.User.email == request.email).first()
+    user = session.query(models.User).filter(models.User.email == request.email).first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="User not found")
     if not verify_password(request.old_password, user.password):
@@ -115,12 +115,12 @@ async def change_password(request:schemas.changepassword, session:Session = Depe
 
 @app.get('/users')
 async def getusers(dependancies=Depends(JWTBearer()), session: Session = Depends(get_session)):
-    users = await session.query(models.User).all()
+    users = session.query(models.User).all()
     return users
 
 @app.post('/login')
 async def login(request:schemas.requestdetails, session:Session = Depends(get_session)):
-    user = await session.query(models.User).filter(models.User.email == request.email).first()
+    user = session.query(models.User).filter(models.User.email == request.email).first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Incorrect email")
     password_hash = user.password
@@ -138,7 +138,7 @@ async def login(request:schemas.requestdetails, session:Session = Depends(get_se
         "refresh_token": refresh,
     }
 
-@app.post('/register',response_model=schemas.User)
+@app.post('/register')
 #Todo: Handle unique user errors
 async def register_user(user:schemas.UserCreate, session:Session = Depends(get_session)):
     existing_user = session.query(models.User).filter_by(email=user.email).first()
@@ -150,4 +150,6 @@ async def register_user(user:schemas.UserCreate, session:Session = Depends(get_s
     session.commit()
     session.refresh(new_user)
 
-    return new_user
+    return {
+        "msg":"User created successfully"
+    }
