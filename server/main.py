@@ -34,7 +34,7 @@ def index():
 
 @app.get('/users/{user_id}', response_model=schemas.GetUser)
 async def get_user_by_id(user_id: int, dependancies= Depends(JWTBearer()), session:Session = Depends(get_session)) :
-    db_user = await crud.get_user(session=session, user_id=user_id)
+    db_user = crud.get_user(session=session, user_id=user_id)
     if db_user is None:
         raise HTTPException(status_code=404, detail="The user does not exist")
     return db_user
@@ -44,7 +44,7 @@ async def admin_page(dependancies= Depends(JWTBearer()), session: Session= Depen
     token = dependancies
     payload = jwt.decode(token, JWT_SECRET_KEY, ALGORITHM)
     user_id = payload['sub']
-    existing_user = await session.query(models.User).filter(models.User.user_id == user_id).first()
+    existing_user = session.query(models.User).filter(models.User.user_id == user_id).first()
     if existing_user is None:
         raise HTTPException(status_code= status.HTTP_400_BAD_REQUEST, detail="User does not exist")
     is_admin = payload['access']
