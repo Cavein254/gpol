@@ -62,7 +62,3 @@ class GetUser(BaseModel):
     username: str
     email: str
     admin: bool
-    posts: list[Post]
-
-    class Config:
-        orm_mode = True
