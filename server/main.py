@@ -47,7 +47,7 @@ def index():
     return {"msg": "welcome to your homepage!"}
 
 
-@app.get("/users/{user_id}", response_model=schemas.GetUser)
+@app.get("/users/{user_id}", response_model=schemas.User)
 async def get_user_by_id(
     user_id: int,
     dependancies=Depends(JWTBearer()),
