@@ -9,6 +9,8 @@ from jose import jwt
 from datetime import datetime, timedelta
 from authapp.database import SessionLocal, engine
 from authapp.utils import get_hashed_password
+from typing import List
+
 from authapp.utils import (
     ACCESS_TOKEN_EXPIRE_MINUTES,
     ALGORITHM,
@@ -47,7 +49,7 @@ def index():
     return {"msg": "welcome to your homepage!"}
 
 
-@app.get("/users/{user_id}", response_model=schemas.User)
+@app.get("/users/{user_id}", response_model=schemas.GetUser)
 async def get_user_by_id(
     user_id: int,
     dependancies=Depends(JWTBearer()),
@@ -175,7 +177,7 @@ async def change_password(
     return {"message": "Password changed successfully", "payload": user}
 
 
-@app.get("/users", response_model=list[schemas.User])
+@app.get("/users", response_model=List[schemas.User])
 async def getusers(
     dependancies=Depends(JWTBearer()), session: Session = Depends(get_session)
 ):

@@ -14,7 +14,7 @@ class UserCreate(BaseModel):
     password: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class requestdetails(BaseModel):
@@ -41,7 +41,7 @@ class TokenCreate(BaseModel):
     created_date: datetime.datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class Post(BaseModel):
@@ -50,7 +50,7 @@ class Post(BaseModel):
     post: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class CreatePost(BaseModel):
@@ -62,3 +62,7 @@ class GetUser(BaseModel):
     username: str
     email: str
     admin: bool
+    # posts: List[Post]
+
+    # class Config:
+    #     from_attributes = True
