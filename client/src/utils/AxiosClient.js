@@ -3,7 +3,7 @@ import axios from 'axios';
 const axiosClient = axios.create();
 
 if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'development') {
-  axiosClient.defaults.baseURL = 'http://localhost:8080';
+  axiosClient.defaults.baseURL = 'http://localhost:8000';
 } else {
   axiosClient.defaults.baseURL = 'liveserver version ';
 }
