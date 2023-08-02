@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../App/store';
 import Logo from '../../assets/main.svg';
+import { registration } from '../../features/auth/registerSlice';
+import { RegistrationDetail } from '../../types';
 import './styles.scss';
 
 const StyledButton = styled(Button)`
@@ -11,21 +15,15 @@ const StyledButton = styled(Button)`
 //TODO: Add validation
 //TODO: Add
 
-interface RegistrationDetail {
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string | null;
-  idNo: number;
-}
-
 const Register = () => {
+  const register = useSelector((state: RootState) => state.register);
+  const dispatch = useDispatch();
   const initialState = {
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    idNo: 0,
+    idNo: '',
   };
   const [details, setDetails] = useState<RegistrationDetail>(initialState);
 
@@ -37,7 +35,7 @@ const Register = () => {
       error.push('The passwords do not match!');
       return;
     }
-    error.length === 0 && console.log({ 'details-new': details });
+    error.length === 0 && dispatch(registration);
     setDetails(initialState);
   };
   return (
@@ -92,7 +90,7 @@ const Register = () => {
                   name="username"
                   type="text"
                   variant="outlined"
-                  placeholder="Prefered username"
+                  placeholder="Prefered Username"
                   value={details.username}
                   onChange={(e) =>
                     setDetails({ ...details, username: e.target.value })
