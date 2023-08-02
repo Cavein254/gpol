@@ -15,19 +15,25 @@ interface RegistrationDetail {
 }
 
 const Register = () => {
-  const [details, setDetails] = useState<RegistrationDetail>({
+  const initialState = {
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
     idNo: '',
-  });
+  };
+  const [details, setDetails] = useState<RegistrationDetail>(initialState);
 
   const error = [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ details: details });
+    if (details.password !== details.confirmPassword) {
+      error.push('The passwords do not match!');
+      return;
+    }
+    error.length === 0 && console.log({ 'details-new': details });
+    setDetails(initialState);
   };
   return (
     <Box className="container">
