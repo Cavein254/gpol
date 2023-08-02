@@ -15,8 +15,8 @@ interface RegistrationDetail {
   username: string;
   email: string;
   password: string;
-  confirmPassword: string;
-  idNo: string;
+  confirmPassword: string | null;
+  idNo: number;
 }
 
 const Register = () => {
@@ -25,7 +25,7 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    idNo: '',
+    idNo: 0,
   };
   const [details, setDetails] = useState<RegistrationDetail>(initialState);
 
@@ -74,16 +74,15 @@ const Register = () => {
           </Box>
           <Box
             sx={{
-              paddingTop: '1rem',
-              border: '1px solid red',
+              display: 'flex',
+              flexDirection: 'column',
               width: '100%',
             }}
           >
             <Box
               component="form"
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
+                margin: '1rem',
               }}
             >
               <FormControl fullWidth>
@@ -169,7 +168,14 @@ const Register = () => {
               </Box>
               <Box>
                 <FormControl fullWidth>
-                  <StyledButton variant="contained" onClick={handleSubmit}>
+                  <StyledButton
+                    variant="contained"
+                    onClick={handleSubmit}
+                    sx={{
+                      marginTop: '2rem',
+                      marginBottom: '1rem',
+                    }}
+                  >
                     Register
                   </StyledButton>
                 </FormControl>
