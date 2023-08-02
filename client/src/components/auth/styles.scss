@@ -1,9 +1,20 @@
 .container {
+  height: 100vh;
 }
 .xs-container {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  height: 30%;
+  margin: 5%;
+  border: 1px solid red;
+  border-radius: 25px;
+}
+
+.sx-formWrapper {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

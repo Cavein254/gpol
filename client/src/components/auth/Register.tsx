@@ -1,15 +1,27 @@
 import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
 import Logo from '../../assets/main.svg';
 import './styles.scss';
 
 const Register = () => {
+  const [details, setDetails] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ details: details });
+  };
   return (
     <Box className="container">
       <Box className="xs-container">
-        <Box>
+        <Box className="image">
           <img src={Logo} alt="logo" />
         </Box>
-        <Box>
+        <Box className="sx-formWrapper">
           <Box>
             <Typography
               variant="h4"
@@ -31,57 +43,80 @@ const Register = () => {
           <Box>
             <Box component="form">
               <FormControl>
-                <Typography variant="h6">Username</Typography>
+                <Typography variant="caption">Username</Typography>
                 <TextField
                   id="username"
                   name="username"
                   type="text"
                   variant="outlined"
                   placeholder="Prefered username"
+                  value={details.username}
+                  onChange={(e) =>
+                    setDetails({ ...details, username: e.target.value })
+                  }
                   required
                 />
               </FormControl>
               <Box>
                 <FormControl>
-                  <Typography variant="h6">Email Address</Typography>
+                  <Typography variant="caption">Email Address</Typography>
                   <TextField
                     id="email"
                     name="email"
                     type="email"
                     placeholder="Enter your Email Address"
+                    value={details.email}
+                    onChange={(e) =>
+                      setDetails({ ...details, email: e.target.value })
+                    }
                     required
                   />
                 </FormControl>
               </Box>
               <Box>
                 <FormControl>
-                  <Typography variant="h6">Password</Typography>
+                  <Typography variant="caption">Password</Typography>
                   <TextField
                     id="password"
                     name="password"
                     type="password"
                     placeholder="Your Password"
+                    value={details.password}
+                    onChange={(e) =>
+                      setDetails({ ...details, password: e.target.value })
+                    }
                     required
                   />
                 </FormControl>
               </Box>
               <Box>
                 <FormControl>
-                  <Typography variant="h6">Confirm password</Typography>
+                  <Typography variant="caption">Confirm password</Typography>
                   <TextField
                     id="confirmPassword"
                     name="confirmPassword"
                     type="password"
                     placeholder="Re-Enter your Password"
+                    value={details.confirmPassword}
+                    onChange={(e) =>
+                      setDetails({
+                        ...details,
+                        confirmPassword: e.target.value,
+                      })
+                    }
                     required
                   />
                 </FormControl>
               </Box>
               <Box>
-                <Button variant="contained">Register</Button>
-              </Box>
-              <Box>
-                <Button variant="contained">Sign In</Button>
+                <Box>
+                  <Button variant="contained" onClick={handleSubmit}>
+                    Register
+                  </Button>
+                </Box>
+                <Box>
+                  <Button variant="contained">Sign In</Button>
+                </Box>
               </Box>
             </Box>
           </Box>
