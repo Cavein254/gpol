@@ -1,7 +1,12 @@
+import styled from '@emotion/styled';
 import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import Logo from '../../assets/main.svg';
 import './styles.scss';
+
+const StyledButton = styled(Button)`
+  background-color: #483285;
+`;
 
 //TODO: Add validation
 //TODO: Add
@@ -42,7 +47,14 @@ const Register = () => {
           <img src={Logo} alt="logo" />
         </Box>
         <Box className="sx-formWrapper">
-          <Box>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+            }}
+          >
             <Typography
               variant="h4"
               sx={{
@@ -60,10 +72,22 @@ const Register = () => {
               Create an account to get started.
             </Typography>
           </Box>
-          <Box>
-            <Box component="form">
-              <FormControl>
-                <Typography variant="caption">Username</Typography>
+          <Box
+            sx={{
+              paddingTop: '1rem',
+              border: '1px solid red',
+              width: '100%',
+            }}
+          >
+            <Box
+              component="form"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <FormControl fullWidth>
+                <Typography variant="body2">Username</Typography>
                 <TextField
                   id="username"
                   name="username"
@@ -77,9 +101,24 @@ const Register = () => {
                   required
                 />
               </FormControl>
+              <FormControl fullWidth>
+                <Typography variant="body2">ID Number</Typography>
+                <TextField
+                  id="idno"
+                  name="username"
+                  type="number"
+                  variant="outlined"
+                  placeholder="Enter your ID No."
+                  value={details.idNo}
+                  onChange={(e) =>
+                    setDetails({ ...details, idNo: e.target.value })
+                  }
+                  required
+                />
+              </FormControl>
               <Box>
-                <FormControl>
-                  <Typography variant="caption">Email Address</Typography>
+                <FormControl fullWidth>
+                  <Typography variant="body2">Email Address</Typography>
                   <TextField
                     id="email"
                     name="email"
@@ -94,8 +133,8 @@ const Register = () => {
                 </FormControl>
               </Box>
               <Box>
-                <FormControl>
-                  <Typography variant="caption">Password</Typography>
+                <FormControl fullWidth>
+                  <Typography variant="body2">Password</Typography>
                   <TextField
                     id="password"
                     name="password"
@@ -110,8 +149,8 @@ const Register = () => {
                 </FormControl>
               </Box>
               <Box>
-                <FormControl>
-                  <Typography variant="caption">Confirm password</Typography>
+                <FormControl fullWidth>
+                  <Typography variant="body2">Confirm password</Typography>
                   <TextField
                     id="confirmPassword"
                     name="confirmPassword"
@@ -129,13 +168,15 @@ const Register = () => {
                 </FormControl>
               </Box>
               <Box>
-                <Box>
-                  <Button variant="contained" onClick={handleSubmit}>
+                <FormControl fullWidth>
+                  <StyledButton variant="contained" onClick={handleSubmit}>
                     Register
-                  </Button>
-                </Box>
+                  </StyledButton>
+                </FormControl>
                 <Box>
-                  <Button variant="contained">Sign In</Button>
+                  <Typography variant="body2">
+                    Already have an account? <span>Login</span>
+                  </Typography>
                 </Box>
               </Box>
             </Box>
