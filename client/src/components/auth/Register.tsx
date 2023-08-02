@@ -28,14 +28,13 @@ const Register = () => {
   const [details, setDetails] = useState<RegistrationDetail>(initialState);
 
   const error = [];
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (details.password !== details.confirmPassword) {
       error.push('The passwords do not match!');
       return;
     }
-    error.length === 0 && dispatch(registration);
+    error.length === 0 && dispatch(registration());
     setDetails(initialState);
   };
   return (

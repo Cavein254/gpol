@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RegistrationDetail } from '../../types';
+import { apiRegisterUser } from '../../utils/utils';
 
 const initialState: RegistrationDetail = {
   username: '',
@@ -9,12 +10,16 @@ const initialState: RegistrationDetail = {
   idNo: '',
 };
 
+export const registerUser = ('user/register', async() => {
+   const response = await 
+})
+
 export const registerSlice = createSlice({
   name: 'register',
   initialState,
   reducers: {
     registration: (state) => {
-      console.log(state);
+      console.log(apiRegisterUser());
     },
   },
 });
