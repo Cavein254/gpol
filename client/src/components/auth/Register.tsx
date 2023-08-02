@@ -3,13 +3,27 @@ import { useState } from 'react';
 import Logo from '../../assets/main.svg';
 import './styles.scss';
 
+//TODO: Add validation
+//TODO: Add
+
+interface RegistrationDetail {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  idNo: string;
+}
+
 const Register = () => {
-  const [details, setDetails] = useState({
+  const [details, setDetails] = useState<RegistrationDetail>({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
+    idNo: '',
   });
+
+  const error = [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
