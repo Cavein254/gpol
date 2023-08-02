@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../App/store';
+import { useDispatch } from 'react-redux';
 import Logo from '../../assets/main.svg';
-import { registration } from '../../features/auth/registerSlice';
+import { registerUser } from '../../features/auth/authActions';
 import { RegistrationDetail } from '../../types';
 import './styles.scss';
 
@@ -16,7 +15,7 @@ const StyledButton = styled(Button)`
 //TODO: Add
 
 const Register = () => {
-  const register = useSelector((state: RootState) => state.register);
+  // const {loading,success,error,userInfo} = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
   const initialState = {
     username: '',
@@ -34,7 +33,7 @@ const Register = () => {
       error.push('The passwords do not match!');
       return;
     }
-    error.length === 0 && dispatch(registration());
+    error.length === 0 && dispatch(registerUser(details));
     setDetails(initialState);
   };
   return (
