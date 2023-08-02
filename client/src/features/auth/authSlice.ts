@@ -1,36 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { registerUser } from './authActions';
+interface RegisterState {
+  entities: [];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: [];
+}
 
 const initialState = {
-  loading: false,
-  userInfo: {},
-  userToken: null,
-  error: null,
-  success: false,
-};
+  entities: [],
+  status: 'idle',
+  error: [],
+} as RegisterState;
 
 const authSlice = createSlice({
   name: 'registration',
   initialState,
-  reducers: {
-    register: () => {},
-  },
-  extraReducers: {
-    [registerUser.pending]: (state) => {
-      state.loading = false;
-      state.error = null;
-    },
-    [registerUser.fulfilled]: (state, { payload }) => {
-      state.loading = false;
-      state.success = true;
-    },
-    [registerUser.rejected]: (state, { payload }) => {
-      state.loading = false;
-      state.error = payload;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(registerUser.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(registerUser.fulfilled, (state, action: PayloadAction) => {
+        state.status = 'succeeded';
+        state.entities.push(action.payload);
+      })
+      .addCase(registerUser.rejected, (state) => {
+        state.status = 'failed';
+      });
   },
 });
 
-export const { register } = authSlice.actions;
+export const { registration } = authSlice.actions;
 
 export default authSlice.reducer;
