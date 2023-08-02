@@ -10,9 +10,7 @@ const initialState: RegistrationDetail = {
   idNo: '',
 };
 
-export const registerUser = ('user/register', async() => {
-   const response = await 
-})
+export const registerUser = ('user/register', async () => {});
 
 export const registerSlice = createSlice({
   name: 'register',
