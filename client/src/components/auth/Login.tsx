@@ -3,7 +3,7 @@ import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Logo from '../../assets/main.svg';
-import { registerUser } from '../../features/auth/authActions';
+import { registerUser } from '../../features/auth/regActions';
 import { RegistrationDetail } from '../../types';
 import './styles.scss';
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../App/store';
 import Logo from '../../assets/main.svg';
-import { registerUser } from '../../features/auth/authActions';
+import { registerUser } from '../../features/auth/regActions';
 import { RegistrationDetail } from '../../types';
 import './styles.scss';
 

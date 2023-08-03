@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { registerUser } from './authActions';
+import { registerUser } from './regActions';
 interface RegisterState {
   entities: [];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
@@ -12,7 +12,7 @@ const initialState = {
   error: [],
 } as RegisterState;
 
-const authSlice = createSlice({
+const regSlice = createSlice({
   name: 'registration',
   initialState,
   reducers: {},
@@ -31,4 +31,4 @@ const authSlice = createSlice({
   },
 });
 
-export default authSlice.reducer;
+export default regSlice.reducer;
