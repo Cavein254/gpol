@@ -22,7 +22,7 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    idNo: '',
+    id_no: '',
   };
   const [details, setDetails] = useState<RegistrationDetail>(initialState);
 
@@ -34,7 +34,7 @@ const Register = () => {
       return;
     }
     error.length === 0 && dispatch(registerUser(details));
-    setDetails(initialState);
+    console.log({ 'user data': details });
   };
   return (
     <Box className="container">
@@ -104,9 +104,9 @@ const Register = () => {
                   type="number"
                   variant="outlined"
                   placeholder="Enter your ID No."
-                  value={details.idNo}
+                  value={details.id_no}
                   onChange={(e) =>
-                    setDetails({ ...details, idNo: e.target.value })
+                    setDetails({ ...details, id_no: e.target.value })
                   }
                   required
                 />

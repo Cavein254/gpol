@@ -232,7 +232,10 @@ async def register_user(
         raise HTTPException(status_code=400, detail="Email already exists")
     password_hash = get_hashed_password(user.password)
     new_user = models.User(
-        username=user.username, password=password_hash, email=user.email
+        username=user.username,
+        password=password_hash,
+        email=user.email,
+        id_no=user.idNo,
     )
     session.add(new_user)
     session.commit()

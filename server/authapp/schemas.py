@@ -12,6 +12,7 @@ class UserCreate(BaseModel):
     username: str
     email: str
     password: str
+    id_no: str
 
     class Config:
         from_attributes = True

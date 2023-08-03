@@ -3,5 +3,5 @@ export interface RegistrationDetail {
   email: string;
   password: string;
   confirmPassword: string | null;
-  idNo: number | string;
+  id_no: number | string;
 }
