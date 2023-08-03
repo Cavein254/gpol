@@ -25,13 +25,11 @@ const Register = () => {
     id_no: '',
   };
   const [details, setDetails] = useState<RegistrationDetail>(initialState);
-
-  const error = [];
+  const [error, setError] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     if (details.password !== details.confirmPassword) {
-      error.push('The passwords do not match!');
-      return;
+      setError('The passwords do not match!');
     }
     error.length === 0 && dispatch(registerUser(details));
     console.log({ 'user data': details });
@@ -68,6 +66,7 @@ const Register = () => {
               Create an account to get started.
             </Typography>
           </Box>
+          {error && <Box>{error}</Box>}
           <Box
             sx={{
               display: 'flex',
