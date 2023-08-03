@@ -9,6 +9,7 @@ export const registerUser = createAsyncThunk(
     const config = {
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
     };
     const response = await axios.post(

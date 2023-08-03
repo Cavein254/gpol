@@ -16,9 +16,14 @@ const StyledButton = styled(Button)`
 //TODO: Add toast for errors
 
 const Register = () => {
-  const { loading, success, error, userInfo } = useSelector(
-    (state: RootState) => state.auth
+  const { status, error, entities } = useSelector(
+    (state: RootState) => state.reg
   );
+  console.log({
+    status,
+    error,
+    entities,
+  });
   const [err, setErr] = useState('');
   const dispatch = useDispatch();
   const initialState = {
