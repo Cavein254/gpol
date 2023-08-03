@@ -1,12 +1,9 @@
 import './App.css';
-import Login from './components/auth/Login';
-// import Register from './components/auth/Register';
-
+import Main from './scenes/Main';
 function App() {
   return (
     <>
-      <Login />
-      {/* <Register /> */}
+      <Main />
     </>
   );
 }

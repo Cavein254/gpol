@@ -37,6 +37,7 @@ const Register = () => {
     e.preventDefault();
     dispatch(loginUser(details));
   };
+  const mainPage = status === 'succeeded' ? <h1>Great</h1> : <h1>Dead</h1>;
   return (
     <Box className="container">
       <Box
