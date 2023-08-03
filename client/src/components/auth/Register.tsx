@@ -12,7 +12,7 @@ const StyledButton = styled(Button)`
 `;
 
 //TODO: Add validation
-//TODO: Add
+//TODO: Add toast for errors
 
 const Register = () => {
   // const {loading,success,error,userInfo} = useSelector((state: RootState) => state.auth);
@@ -30,15 +30,21 @@ const Register = () => {
     e.preventDefault();
     if (details.password !== details.confirmPassword) {
       setError('The passwords do not match!');
+      return;
     }
     error.length === 0 && dispatch(registerUser(details));
     console.log({ 'user data': details });
   };
   return (
     <Box className="container">
-      <Box className="xs-container">
-        <Box className="image">
-          <img src={Logo} alt="logo" />
+      <Box
+        className="xs-container"
+        sx={{
+          boxShadow: 3,
+        }}
+      >
+        <Box>
+          <img src={Logo} alt="logo" className="image" />
         </Box>
         <Box className="sx-formWrapper">
           <Box

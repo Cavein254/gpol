@@ -11,6 +11,11 @@
   background-color: white;
 }
 
+.image {
+  height: 100%;
+  width: 100%;
+}
+
 .sx-formWrapper {
   margin: 2rem 1rem;
   display: flex;
@@ -18,4 +23,22 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .xs-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 20% 1rem;
+  }
+  .sx-formWrapper {
+    margin: 10% 1rem;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
