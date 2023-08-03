@@ -197,9 +197,7 @@ async def getusers(
 async def login(
     request: schemas.requestdetails, session: Session = Depends(get_session)
 ):
-    user = (
-        session.query(models.User).filter(models.id_no.email == request.id_no).first()
-    )
+    user = session.query(models.User).filter(models.User.id_no == request.id_no).first()
     if user is None:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Incorrect email"

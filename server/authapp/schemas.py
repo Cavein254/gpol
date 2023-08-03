@@ -19,7 +19,7 @@ class UserCreate(BaseModel):
 
 
 class requestdetails(BaseModel):
-    email: str
+    id_no: str
     password: str
 
 

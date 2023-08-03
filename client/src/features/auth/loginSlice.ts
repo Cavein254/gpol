@@ -13,7 +13,7 @@ const initialState = {
   error: [],
 } as RegisterState;
 
-const regSlice = createSlice({
+const loginSlice = createSlice({
   name: 'registration',
   initialState,
   reducers: {},
@@ -32,4 +32,4 @@ const regSlice = createSlice({
   },
 });
 
-export default loginUser.reducer;
+export default loginSlice.reducer;

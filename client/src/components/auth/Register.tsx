@@ -41,7 +41,6 @@ const Register = () => {
       return;
     }
     error.length === 0 && dispatch(registerUser(details));
-    console.log({ 'user data': details });
   };
   return (
     <Box className="container">
