@@ -31,6 +31,4 @@ const authSlice = createSlice({
   },
 });
 
-export const { registration } = authSlice.actions;
-
 export default authSlice.reducer;

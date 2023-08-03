@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../App/store';
 import Logo from '../../assets/main.svg';
 import { registerUser } from '../../features/auth/authActions';
 import { RegistrationDetail } from '../../types';
@@ -15,7 +16,10 @@ const StyledButton = styled(Button)`
 //TODO: Add toast for errors
 
 const Register = () => {
-  // const {loading,success,error,userInfo} = useSelector((state: RootState) => state.auth);
+  const { loading, success, error, userInfo } = useSelector(
+    (state: RootState) => state.auth
+  );
+  const [err, setErr] = useState('');
   const dispatch = useDispatch();
   const initialState = {
     username: '',
@@ -25,11 +29,10 @@ const Register = () => {
     id_no: '',
   };
   const [details, setDetails] = useState<RegistrationDetail>(initialState);
-  const [error, setError] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     if (details.password !== details.confirmPassword) {
-      setError('The passwords do not match!');
+      setErr('The passwords do not match!');
       return;
     }
     error.length === 0 && dispatch(registerUser(details));
