@@ -5,7 +5,7 @@ import './style.scss';
 const Hero = () => {
   return (
     <Box className="hero-wrapper">
-      <Box>
+      <Box className="hero-left">
         <Box>
           <Typography
             variant="h4"
@@ -22,6 +22,7 @@ const Hero = () => {
             variant="h4"
             className="hero-title"
             sx={{
+              paddingTop: '1.2rem',
               fontFamily: 'Vollkorn',
               lineHeight: '0.95',
               fontWeight: '900',
@@ -34,7 +35,8 @@ const Hero = () => {
             variant="caption"
             sx={{
               fontFamily: 'Poppins',
-              fontWeight: '200',
+              fontWeight: '400',
+              fontSize: '1rem',
             }}
           >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
@@ -43,11 +45,11 @@ const Hero = () => {
             laborum repellat eveniet exercitationem!
           </Typography>
         </Box>
-        <Box>
+        <Box className="btn-container">
           <Button variant="contained">Find Out More</Button>
         </Box>
       </Box>
-      <Box className="work-wrapper">
+      <Box className="hero-right">
         <img src={Work} alt="Working Enviroment" className="work" />
       </Box>
     </Box>
