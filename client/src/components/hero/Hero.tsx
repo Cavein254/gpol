@@ -22,14 +22,21 @@ const Hero = () => {
             variant="h4"
             className="hero-title"
             sx={{
-              fontFamily: 'Poppins',
+              fontFamily: 'Vollkorn',
+              lineHeight: '0.95',
               fontWeight: '900',
               fontSize: '3.5rem',
             }}
           >
             Work and Find Joy Pursing your PASSION
           </Typography>
-          <Typography variant="caption">
+          <Typography
+            variant="caption"
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: '200',
+            }}
+          >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
             est voluptas, distinctio et ex nulla mollitia vitae labore beatae!
             Voluptate doloribus perspiciatis numquam commodi, facilis quod
