@@ -1,0 +1,26 @@
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  overflow-y: auto;
+}
+
+.hero-tagline {
+  color: #df6951;
+}
+
+.hero-title {
+  color: #181e4b;
+}
+
+.work-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work {
+  margin-top: 2rem;
+  height: 50%;
+  width: 50%;
+}
