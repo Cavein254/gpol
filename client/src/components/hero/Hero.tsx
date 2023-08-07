@@ -7,13 +7,22 @@ const Hero = () => {
     <Box className="hero-wrapper">
       <Box>
         <Box>
-          <Typography variant="h4" className="hero-tagline">
+          <Typography
+            variant="h4"
+            className="hero-tagline"
+            sx={{
+              fontFamily: 'Poppins',
+              fontWeight: '900',
+              fontSize: '0.9rem',
+            }}
+          >
             BEST OPPORTUNITIES FROM AROUND THE GLOBE
           </Typography>
           <Typography
             variant="h4"
             className="hero-title"
             sx={{
+              fontFamily: 'Poppins',
               fontWeight: '900',
               fontSize: '3.5rem',
             }}
