@@ -6,7 +6,10 @@ import Typography from '@mui/material/Typography';
 
 export default function Item({ sector }) {
   return (
-    <Card className="item-wrapper">
+    <Card
+      className="item-wrapper"
+      sx={{ marginBottom: '1rem', color: '#181e4b' }}
+    >
       <CardMedia sx={{ height: 140 }} image={sector.src} title={sector.title} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

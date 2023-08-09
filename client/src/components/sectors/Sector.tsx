@@ -17,6 +17,7 @@ const Sector = () => {
             fontSize: '1.2rem',
             textTransform: 'uppercase',
             fontWeight: 900,
+            textAlign: 'center',
           }}
         >
           Top Ranking
@@ -28,6 +29,8 @@ const Sector = () => {
             fontFamily: 'Volkhov',
             textTransform: 'uppercase',
             fontWeight: 900,
+            color: '#181e4b',
+            textAlign: 'center',
           }}
         >
           Top Ranking Professions
