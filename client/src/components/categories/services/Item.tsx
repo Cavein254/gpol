@@ -13,7 +13,13 @@ export default function Item({ service }) {
           <Box>
             <CampaignIcon />
           </Box>
-          <Typography variant="h4" component="div">
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             {service.title}
           </Typography>
           <Typography variant="caption" component="div">
