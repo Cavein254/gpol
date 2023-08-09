@@ -1,5 +1,5 @@
 import CampaignIcon from '@mui/icons-material/Campaign';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import React from 'react';
@@ -7,12 +7,16 @@ import './styles.scss';
 
 export default function Item({ service }) {
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" className="card-wrapper">
       <React.Fragment>
-        <CardContent>
-          <CampaignIcon />
-          <Typography variant="h4">{service.title}</Typography>
-          <Typography variant="caption">
+        <CardContent className="card-content">
+          <Box>
+            <CampaignIcon />
+          </Box>
+          <Typography variant="h4" component="div">
+            {service.title}
+          </Typography>
+          <Typography variant="caption" component="div">
             As part of our commitment to helping you succeed, we proudly offer
             personalized career advice. Our team of experienced professionals is
             dedicated to assisting you at every stage of your career journey.

@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 .card-wrapper {
-  border: 1px solid red;
-  max-width: 250px;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
