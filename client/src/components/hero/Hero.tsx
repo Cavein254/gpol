@@ -39,10 +39,12 @@ const Hero = () => {
               fontSize: '1rem',
             }}
           >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
-            est voluptas, distinctio et ex nulla mollitia vitae labore beatae!
-            Voluptate doloribus perspiciatis numquam commodi, facilis quod
-            laborum repellat eveniet exercitationem!
+            Are you ready to take your career to the next level? Look no further
+            than <span>GPOL</span>, the leading destination for job seekers and
+            employers to connect, explore, and excel. With our cutting-edge
+            technology and user-centric approach, we've revolutionized the job
+            search process, making it easier and more effective than ever
+            before.
           </Typography>
         </Box>
         <Box className="btn-container">
