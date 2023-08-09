@@ -2,11 +2,34 @@ import { Box, Typography } from '@mui/material';
 
 const Steps = () => {
   return (
-    <Box>
+    <Box
+      sx={{
+        margin: '1rem',
+      }}
+    >
       <Box>
         <Box>
-          <Typography variant="h4">Easy and Fast</Typography>
-          <Typography variant="h5">
+          <Typography
+            variant="h4"
+            sx={{
+              fontFamily: 'Volkhov',
+              fontSize: '1.2rem',
+              textTransform: 'uppercase',
+              fontWeight: 900,
+            }}
+          >
+            Easy and Fast
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontSize: '2.2rem',
+              fontFamily: 'Volkhov',
+              textTransform: 'uppercase',
+              fontWeight: 900,
+              color: '#181e4b',
+            }}
+          >
             Fast Track Your Career in 3 Easy Steps
           </Typography>
         </Box>
@@ -14,7 +37,16 @@ const Steps = () => {
           <Box>
             <Box></Box>
             <Box>
-              <Typography variant="body2">Browse</Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontFamily: 'Poppins',
+                  fontWeight: '900',
+                  fontSize: '1rem',
+                }}
+              >
+                Browse
+              </Typography>
               <Typography variant="caption">
                 Search the site on various opportunities that are available
               </Typography>
