@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import Services from './services/Services';
 import './styles.scss';
 const Categories = () => {
   return (
@@ -34,6 +35,9 @@ const Categories = () => {
         >
           We Offer Best Services
         </Typography>
+      </Box>
+      <Box>
+        <Services />
       </Box>
     </Box>
   );
