@@ -1,7 +1,7 @@
 import Engineering from '../../assets/engineering.jpg';
 import Medicine from '../../assets/medicine.jpg';
 import School from '../../assets/school.jpg';
-export const sector = () => [
+export const sectorItems = [
   {
     id: 1,
     title: 'Health Sector',

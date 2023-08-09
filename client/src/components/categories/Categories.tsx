@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Services from './services/Services';
+import Services from '../services/Services';
 import './styles.scss';
 const Categories = () => {
   return (

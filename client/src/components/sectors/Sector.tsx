@@ -1,8 +1,9 @@
 import { Box, Typography } from '@mui/material';
-import Item from './Item';
+import { sectorItems } from './data';
 import './styles.scss';
 
 const Sector = () => {
+  console.log(sectorItems);
   return (
     <Box>
       <Box className="sector-text">
@@ -33,9 +34,7 @@ const Sector = () => {
         sx={{
           margin: '1rem',
         }}
-      >
-        <Item />
-      </Box>
+      ></Box>
     </Box>
   );
 };
