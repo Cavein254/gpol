@@ -16,7 +16,7 @@ const Hero = () => {
               fontSize: '0.9rem',
             }}
           >
-            BEST OPPORTUNITIES FROM AROUND THE GLOBE
+            Empowering Your Professional Journey
           </Typography>
           <Typography
             variant="h4"
