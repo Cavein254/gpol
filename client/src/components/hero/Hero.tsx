@@ -23,7 +23,7 @@ const Hero = () => {
             className="hero-title"
             sx={{
               paddingTop: '1.2rem',
-              fontFamily: 'Vollkorn',
+              fontFamily: 'Volkhov',
               lineHeight: '0.95',
               fontWeight: '900',
               fontSize: '3.5rem',
