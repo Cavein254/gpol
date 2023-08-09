@@ -20,14 +20,14 @@ export const services = [
   },
   {
     id: '3',
-    icon: ListAltIcon,
+    icon: ContactMailIcon,
     title: 'Resume Building',
     description:
       "Your resume and portfolio are your digital first impressions. Our advisors will help you create compelling resumes, portfolios, and LinkedIn profiles that showcase your achievements, skills, and experience in the best possible light. We'll ensure that your personal brand reflects your unique value proposition and resonates with potential employers.",
   },
   {
     id: '4',
-    icon: ContactMailIcon,
+    icon: ListAltIcon,
     title: 'Interview Preparation',
     description:
       "Ace your interviews with confidence. Our advisors will provide insights into common interview questions, conduct mock interview sessions, and offer feedback to help you refine your interview skills. We'll work together to ensure you're well-prepared to present yourself effectively and make a lasting impression on interviewers.",
