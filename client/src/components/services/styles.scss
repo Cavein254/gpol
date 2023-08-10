@@ -2,13 +2,27 @@
   margin: 1.2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card-wrapper {
   margin-bottom: 1rem;
+  max-width: 450px;
 }
 .card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .services-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card-wrapper {
+    max-width: 350px;
+    margin-right: 1rem;
+  }
 }
