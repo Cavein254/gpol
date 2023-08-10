@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import { FcSearch } from 'react-icons/fc';
 const Steps = () => {
   return (
     <Box
@@ -36,7 +37,9 @@ const Steps = () => {
         </Box>
         <Box>
           <Box>
-            <Box></Box>
+            <Box>
+              <FcSearch />
+            </Box>
             <Box>
               <Typography
                 variant="body2"
