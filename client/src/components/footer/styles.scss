@@ -4,3 +4,10 @@
   justify-content: center;
   align-items: center;
 }
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 0;
+}
