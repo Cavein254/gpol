@@ -1,7 +1,8 @@
 .subcribe-container {
-  background-color: #6246e5;
+  background-color: #fff;
   margin: 1rem;
   padding-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,4 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
+}
+.subscribe-btn > button {
+  margin-left: 1rem;
 }

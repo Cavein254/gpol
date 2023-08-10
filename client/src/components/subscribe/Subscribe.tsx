@@ -21,7 +21,9 @@ const Subscribe = () => {
       </Box>
       <Box className="subscribe-btn">
         <TextField variant="outlined" />
-        <Button variant="contained">Subscribe</Button>
+        <Button variant="contained" size="large">
+          Subscribe
+        </Button>
       </Box>
     </Box>
   );
