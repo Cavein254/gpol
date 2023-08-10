@@ -42,7 +42,7 @@ const Footer = () => {
         <Typography variant="caption">Help/FAQs</Typography>
         <Typography variant="caption">Press</Typography>
       </Box>
-      <Box></Box>
+      <Box>All rights reserved.</Box>
     </Box>
   );
 };
