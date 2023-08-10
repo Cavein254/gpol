@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material';
-
 const Steps = () => {
   return (
     <Box
@@ -43,11 +42,19 @@ const Steps = () => {
                   fontFamily: 'Poppins',
                   fontWeight: '900',
                   fontSize: '1rem',
+                  color: '#5E6282',
                 }}
               >
                 Browse
               </Typography>
-              <Typography variant="caption">
+              <Typography
+                variant="caption"
+                sx={{
+                  fontFamily: 'Poppins',
+                  fontWeight: '200',
+                  fontSize: '1rem',
+                }}
+              >
                 Search the site on various opportunities that are available
               </Typography>
             </Box>
