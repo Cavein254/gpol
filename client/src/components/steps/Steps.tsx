@@ -15,6 +15,7 @@ const Steps = () => {
               fontSize: '1.2rem',
               textTransform: 'uppercase',
               fontWeight: 900,
+              textAlign: 'center',
             }}
           >
             Easy and Fast
@@ -27,6 +28,7 @@ const Steps = () => {
               textTransform: 'uppercase',
               fontWeight: 900,
               color: '#181e4b',
+              textAlign: 'center',
             }}
           >
             Fast Track Your Career in 3 Easy Steps

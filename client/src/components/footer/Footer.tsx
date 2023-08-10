@@ -1,8 +1,9 @@
 import { Box, Typography } from '@mui/material';
+import './styles.scss';
 
 const Footer = () => {
   return (
-    <Box>
+    <Box className="footer-container">
       <Box>
         <Typography variant="h4">GPOL</Typography>
         <Typography variant="caption">Your Faithful Career Patner</Typography>
