@@ -4,8 +4,30 @@
   justify-content: center;
   flex-direction: column;
 }
+.items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .item-wrapper {
-  margin: '1rem';
-  color: red;
+  max-width: 450px;
+}
+.rating-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .items-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .item-wrapper {
+    max-width: 350px;
+    margin-right: 1rem;
+  }
 }

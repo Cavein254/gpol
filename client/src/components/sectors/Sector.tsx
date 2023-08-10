@@ -33,10 +33,11 @@ const Sector = () => {
             textAlign: 'center',
           }}
         >
-          Top Ranking Professions
+          Top Ranking Sectors
         </Typography>
       </Box>
       <Box
+        className="items-container"
         sx={{
           margin: '1rem',
         }}
