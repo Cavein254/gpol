@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material';
-import { FcSearch } from ;
 const Steps = () => {
   return (
     <Box
