@@ -2,7 +2,7 @@ import { FcSearch } from 'react-icons/fc';
 import { MdContentPasteGo } from 'react-icons/md';
 import { TfiWrite } from 'react-icons/tfi';
 
-const steps = [
+export const stepData = [
   {
     id: 1,
     icon: FcSearch,
