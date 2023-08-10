@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Box>
       <Box className="nav" component="nav">
-        <Box>
+        <Box className="logo">
           <Typography variant="h4">GPOL</Typography>
         </Box>
         <Box className="mid-nav">

@@ -3,10 +3,11 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid red;
   margin: 10px 16px;
 }
-
+.logo {
+  flex-grow: 1;
+}
 .mid-nav {
   display: none;
 }
@@ -14,7 +15,6 @@
 @media only screen and (min-width: 600px) {
   .mid-nav {
     display: block;
-    background-color: red;
     display: flex;
     flex-grow: 1;
     justify-content: center;
