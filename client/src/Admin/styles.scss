@@ -1,0 +1,16 @@
+.adminContainer {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard-main {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.admin-left {
+  background-color: red;
+  border: 1px solid red;
+}
+.admin-right {
+  background-color: red;
+  border: 1px solid red;
+}

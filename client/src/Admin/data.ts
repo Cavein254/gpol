@@ -15,12 +15,12 @@ export const adminData = [
     name: 'Create User',
   },
   {
-    id: 1,
+    id: 4,
     icon: '',
     name: 'Analytics',
   },
   {
-    id: 1,
+    id: 5,
     icon: '',
     name: 'Calendar',
   },
