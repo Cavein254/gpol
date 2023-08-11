@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 const Header = () => {
@@ -9,16 +10,20 @@ const Header = () => {
           <Typography variant="h4">GPOL</Typography>
         </Box>
         <Box className="mid-nav">
-          <Typography variant="caption">Careers</Typography>
-          <Typography variant="caption">About Us</Typography>
-          <Typography variant="caption">Contact Us</Typography>
-          <Button variant="text">Post a Job</Button>
+          <Link to="/">Careers</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact Us</Link>
+          <Button variant="text">
+            <Link to="/create">Post a Job</Link>
+          </Button>
         </Box>
         <Box>
           <Button variant="outlined" sx={{ marginRight: '10px' }}>
-            Sign Up
+            <Link to="/auth/register">Sign Up</Link>
           </Button>
-          <Button variant="contained">Login</Button>
+          <Button variant="contained">
+            <Link to="/auth/login">Login</Link>
+          </Button>
         </Box>
         <Box></Box>
       </Box>
