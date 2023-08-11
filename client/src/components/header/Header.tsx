@@ -10,12 +10,14 @@ const Header = () => {
           <Typography variant="h4">GPOL</Typography>
         </Box>
         <Box className="mid-nav">
-          <Link to="/">Careers</Link>
+          <Link to="/list">
+            <Typography variant="body1">Careers</Typography>
+          </Link>
           <Link to="/about">About Us</Link>
           <Link to="/contact">Contact Us</Link>
-          <Button variant="text">
-            <Link to="/create">Post a Job</Link>
-          </Button>
+          <Link to="/create">
+            <Button variant="text">Post a Job</Button>
+          </Link>
         </Box>
         <Box>
           <Link to="/auth/register">

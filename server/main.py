@@ -235,7 +235,7 @@ async def register_user(
         username=user.username,
         password=password_hash,
         email=user.email,
-        id_no=user.idNo,
+        id_no=user.id_no,
     )
     session.add(new_user)
     session.commit()
