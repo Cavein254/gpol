@@ -3,14 +3,14 @@
   flex-direction: row;
 }
 .dashboard-main {
+  width: 85vw;
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 2fr 1fr;
 }
 .admin-left {
-  background-color: red;
-  border: 1px solid red;
+}
+.username {
+  color: #df6951;
 }
 .admin-right {
-  background-color: red;
-  border: 1px solid red;
 }

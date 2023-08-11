@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import AdminHeader from './AdminHeader';
+import Left from './Left';
 import { adminData } from './data';
 import './styles.scss';
 
@@ -21,7 +22,7 @@ const Admin = () => {
         <AdminHeader />
         <Box className="dashboard-main">
           <Box className="admin-left">
-            <h1>Left</h1>
+            <Left />
           </Box>
           <Box className="admin-right">Right</Box>
         </Box>
