@@ -4,3 +4,4 @@ change button styles making one global style
 create a working humbuger menu on mobile
 create steps sidebar
 Handle animations
+Add hover effect on services

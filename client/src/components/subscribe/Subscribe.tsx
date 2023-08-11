@@ -20,7 +20,7 @@ const Subscribe = () => {
         </Typography>
       </Box>
       <Box className="subscribe-btn">
-        <TextField variant="outlined" />
+        <TextField variant="outlined" fullWidth />
         <Button variant="contained" size="large">
           Subscribe
         </Button>
