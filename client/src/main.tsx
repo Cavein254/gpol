@@ -8,6 +8,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
+import Admin from './Admin/Admin.tsx';
 import App from './App.tsx';
 import { store } from './App/store';
 import Header from './components/header/Header.tsx';
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Main />} />
       <Route path="/auth/login" element={<LoginPage />} />
       <Route path="/auth/register" element={<RegisterPage />} />
+      <Route path="/user/admin" element={<Admin />} />
     </Route>
   )
 );

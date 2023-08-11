@@ -7,12 +7,17 @@ export const adminData = [
   {
     id: 2,
     icon: '',
-    name: 'Analytics',
+    name: 'Users',
   },
   {
     id: 3,
     icon: '',
-    name: 'Tasks',
+    name: 'Create User',
+  },
+  {
+    id: 1,
+    icon: '',
+    name: 'Analytics',
   },
   {
     id: 1,
