@@ -18,12 +18,14 @@ const Header = () => {
           </Button>
         </Box>
         <Box>
-          <Button variant="outlined" sx={{ marginRight: '10px' }}>
-            <Link to="/auth/register">Sign Up</Link>
-          </Button>
-          <Button variant="contained">
-            <Link to="/auth/login">Login</Link>
-          </Button>
+          <Link to="/auth/register">
+            <Button variant="outlined" sx={{ marginRight: '10px' }}>
+              Sign Up
+            </Button>
+          </Link>
+          <Link to="/auth/login">
+            <Button variant="contained">Login</Button>
+          </Link>
         </Box>
         <Box></Box>
       </Box>
