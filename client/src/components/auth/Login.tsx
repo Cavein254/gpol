@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
 //TODO: Add validation
 //TODO: Add toast for errors
 
-const Register = () => {
+const Login = () => {
   const { status, error, entities } = useSelector(
     (state: RootState) => state.login
   );
@@ -147,4 +147,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
