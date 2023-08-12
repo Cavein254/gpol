@@ -54,9 +54,25 @@ const Left = () => {
       </Box>
       <JobStats />
       <Box className="line-chart">
+        <Typography
+          variant="h4"
+          sx={{
+            textAlign: 'center',
+          }}
+        >
+          User Based on Days
+        </Typography>
         <BarChart />
       </Box>
       <Box className="line-chart">
+        <Typography
+          variant="h4"
+          sx={{
+            textAlign: 'center',
+          }}
+        >
+          User Based on Region
+        </Typography>
         <PieChart />
       </Box>
     </Box>
