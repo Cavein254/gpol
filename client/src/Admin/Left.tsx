@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
+import Task from '../assets/tasks.svg';
 
 const Left = () => {
   return (
@@ -9,7 +10,7 @@ const Left = () => {
             variant="h2"
             sx={{
               fontFamily: 'Poppins',
-              fontSize: '1.4rem',
+              fontSize: '1.8rem',
               fontWeight: '900',
             }}
           >
@@ -17,7 +18,30 @@ const Left = () => {
           </Typography>
         </Box>
         <Box>
-          <Button variant="contained">+ Add New Task</Button>
+          <Button variant="contained">+ Add New Job</Button>
+        </Box>
+      </Box>
+      <Box className="admin-task">
+        <Box>
+          <Box>
+            <Typography
+              variant="h2"
+              sx={{
+                fontFamily: 'Poppins',
+                fontSize: '1.4rem',
+                fontWeight: '900',
+              }}
+            >
+              Today's Tasks
+            </Typography>
+            <Typography variant="body1">
+              Check your daily tasks and schedule
+            </Typography>
+            <Button variant="contained">Check Today's Tasks</Button>
+          </Box>
+        </Box>
+        <Box>
+          <img src={Task} alt="tasks" />
         </Box>
       </Box>
     </Box>
