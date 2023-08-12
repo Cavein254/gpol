@@ -16,7 +16,7 @@ const JobStats = () => {
               sx={{
                 fontFamily: 'Poppins',
                 fontWeight: 400,
-                fontSize: '1rem',
+                fontSize: '0.8rem',
               }}
             >
               {job.text}
@@ -26,7 +26,7 @@ const JobStats = () => {
               sx={{
                 fontFamily: 'Poppins',
                 fontWeight: 900,
-                fontSize: '2.5rem',
+                fontSize: '1.4rem',
               }}
             >
               {job.stats}
@@ -39,7 +39,7 @@ const JobStats = () => {
       </Box>
     );
   });
-  return { jobs };
+  return <Box className="jobs-wrapper">{jobs}</Box>;
 };
 
 export default JobStats;

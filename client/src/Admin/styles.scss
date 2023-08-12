@@ -46,14 +46,21 @@
   height: 100%;
   width: 100%;
 }
+.jobs-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .jobstats-container {
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 .job-item {
   background-color: #fff;
   border-radius: 15px;
-  width: 200px;
   display: flex;
+  width: 150px;
   flex-direction: row;
 }
 .item-left {
