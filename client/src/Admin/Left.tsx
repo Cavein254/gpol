@@ -1,6 +1,8 @@
 import { Box, Button, Typography } from '@mui/material';
 import Task from '../assets/tasks.svg';
 import JobStats from './left/JobStats';
+import { PieChart } from './left/PieChart';
+import { BarChart } from './left/UserVisits';
 
 const Left = () => {
   return (
@@ -51,6 +53,12 @@ const Left = () => {
         </Box>
       </Box>
       <JobStats />
+      <Box className="line-chart">
+        <BarChart />
+      </Box>
+      <Box className="line-chart">
+        <PieChart />
+      </Box>
     </Box>
   );
 };
