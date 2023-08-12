@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import Task from '../assets/tasks.svg';
+import JobStats from './left/JobStats';
 
 const Left = () => {
   return (
@@ -45,10 +46,11 @@ const Left = () => {
             <Button variant="contained">Check Today's Tasks</Button>
           </Box>
         </Box>
-        <Box>
-          <img src={Task} alt="tasks" className="admin-task-img" />
+        <Box className="admin-task-img">
+          <img src={Task} alt="tasks" />
         </Box>
       </Box>
+      <JobStats />
     </Box>
   );
 };

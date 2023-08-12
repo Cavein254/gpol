@@ -15,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  margin: 0 1rem;
+  margin: 1rem;
 }
 .username {
   color: #df6951;
@@ -36,8 +36,13 @@
   justify-content: space-between;
   align-items: start;
   margin-left: 1rem;
+  width: 100%;
+  white-space: pre-wrap;
 }
 .admin-task-img {
+  width: 50%;
+}
+.admin-task-img > img {
   height: 100%;
   width: 100%;
 }
