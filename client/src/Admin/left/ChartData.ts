@@ -1,62 +1,62 @@
 export const ChartData = [
   {
     day: 'Monday',
-    degress: 59,
+    total: 59,
   },
   {
     day: 'Tuesday',
-    degress: 61,
+    total: 61,
   },
   {
     day: 'Wednesday',
-    degress: 55,
+    total: 55,
   },
   {
     day: 'Thursday',
-    degress: 78,
+    total: 78,
   },
   {
     day: 'Friday',
-    degress: 71,
+    total: 71,
   },
   {
     day: 'Saturday',
-    degress: 56,
+    total: 56,
   },
   {
     day: 'Sunday',
-    degress: 67,
+    total: 67,
   },
 ];
 
 export const piedata = [
   {
-    id: 'java',
-    label: 'java',
+    id: 'Nigeria',
+    label: 'Nigeria',
     value: 195,
     color: 'hsl(90, 70%, 50%)',
   },
   {
-    id: 'erlang',
-    label: 'erlang',
+    id: 'Uganda',
+    label: 'Uganda',
     value: 419,
     color: 'hsl(56, 70%, 50%)',
   },
   {
-    id: 'ruby',
-    label: 'ruby',
+    id: 'Kenya',
+    label: 'Kenya',
     value: 407,
     color: 'hsl(103, 70%, 50%)',
   },
   {
-    id: 'haskell',
-    label: 'haskell',
+    id: 'Egypt',
+    label: 'Egypt',
     value: 474,
     color: 'hsl(186, 70%, 50%)',
   },
   {
-    id: 'go',
-    label: 'go',
+    id: 'Tanzania',
+    label: 'Tanzania',
     value: 71,
     color: 'hsl(104, 70%, 50%)',
   },

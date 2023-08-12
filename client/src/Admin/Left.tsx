@@ -58,9 +58,12 @@ const Left = () => {
           variant="h4"
           sx={{
             textAlign: 'center',
+            fontFamily: 'Poppins',
+            fontSize: '0.9rem',
+            fontWeight: '900',
           }}
         >
-          User Based on Days
+          Users Based on Days
         </Typography>
         <BarChart />
       </Box>
@@ -69,9 +72,12 @@ const Left = () => {
           variant="h4"
           sx={{
             textAlign: 'center',
+            fontFamily: 'Poppins',
+            fontSize: '0.9rem',
+            fontWeight: '900',
           }}
         >
-          User Based on Region
+          Weekly Users Based on Region
         </Typography>
         <PieChart />
       </Box>
