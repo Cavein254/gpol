@@ -21,9 +21,14 @@ const Left = () => {
           <Button variant="contained">+ Add New Job</Button>
         </Box>
       </Box>
-      <Box className="admin-task">
+      <Box
+        className="admin-task"
+        sx={{
+          boxShadow: 3,
+        }}
+      >
         <Box>
-          <Box>
+          <Box className="admin-task-text">
             <Typography
               variant="h2"
               sx={{
@@ -41,7 +46,7 @@ const Left = () => {
           </Box>
         </Box>
         <Box>
-          <img src={Task} alt="tasks" />
+          <img src={Task} alt="tasks" className="admin-task-img" />
         </Box>
       </Box>
     </Box>

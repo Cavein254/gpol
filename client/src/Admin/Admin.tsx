@@ -18,7 +18,7 @@ const Admin = () => {
       <Box className="sidebar">
         <>{icons}</>
       </Box>
-      <Box>
+      <Box className="admin-wrapper">
         <AdminHeader />
         <Box className="dashboard-main">
           <Box className="admin-left">
